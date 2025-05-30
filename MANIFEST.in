@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include .env.example
+include requirements.txt
+include pyproject.toml
+recursive-include aif_sp_validator_sdk *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store

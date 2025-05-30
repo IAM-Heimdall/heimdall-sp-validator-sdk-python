@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heimdall-sp-validator-sdk"
+version = "0.1.0"
+authors = [
+    {name = "IAM Heimdall Team", email = "contact@iamheimdall.com"}
+]
+description = "Service Provider SDK for validating Agent Identity Framework (AIF) tokens"
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["aif", "agent", "identity", "framework", "jwt", "token", "validation", "security"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0.0,<3.0.0",
+    "PyJWT[cryptography]>=2.8.0,<3.0.0",
+    "httpx>=0.20.0,<1.0.0",
+    "cryptography>=3.4.0,<42.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-asyncio>=0.18.0",
+    "pytest-cov>=3.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+test = [
+    "pytest>=6.0",
+    "pytest-asyncio>=0.18.0",
+    "httpx-mock>=0.7.0",
+]
+
+[project.urls]
+Homepage = "https://poc.iamheimdall.com"
+Documentation = "https://github.com/your-org/aif-sp-validator-sdk#readme"
+Repository = "https://github.com/your-org/aif-sp-validator-sdk"
+Issues = "https://github.com/your-org/aif-sp-validator-sdk/issues"
+
+[tool.setuptools.packages.find]
+include = ["aif_sp_validator_sdk*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
