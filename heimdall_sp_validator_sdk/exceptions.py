@@ -107,7 +107,7 @@ class AIFTimeoutError(AIFRegistryConnectionError): # Inherits from ConnectionErr
 # but it's good to have it defined as part of the AIF ecosystem.
 class AIFPermissionError(AIFTokenValidationError):
     """Raised when validated token permissions are insufficient for the requested operation."""
-    def __init__(self, message: str, required_permissions: Optional[PermissionsList] = None, token_permissions: Optional[PermissionsList] = None, **kwargs):
+    def __init__(self, message: str, required_permissions: Optional[List[str]] = None, token_permissions: Optional[List[str]] = None, **kwargs):
         super().__init__(message, **kwargs)
         self.required_permissions = required_permissions or []
         self.token_permissions = token_permissions or []

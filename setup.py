@@ -11,12 +11,12 @@ setup(
     description="Service Provider SDK for validating Agent Identity Framework (AIF) tokens",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/your-org/aif-sp-validator-sdk",
+    url="https://github.com/IAM-Heimdall/heimdall-sp-validator-sdk-python",
     project_urls={
         "Homepage": "https://poc.iamheimdall.com",
-        "Documentation": "https://github.com/your-org/aif-sp-validator-sdk#readme",
-        "Repository": "https://github.com/your-org/aif-sp-validator-sdk",
-        "Issues": "https://github.com/your-org/aif-sp-validator-sdk/issues",
+        "Documentation": "https://github.com/IAM-Heimdall/heimdall-sp-validator-sdk-python/blob/main/README.md",
+        "Repository": "https://github.com/IAM-Heimdall/heimdall-sp-validator-sdk-python",
+        "Issues": "https://github.com/IAM-Heimdall/heimdall-sp-validator-sdk-python/issues",
     },
     packages=find_packages(),
     install_requires=[

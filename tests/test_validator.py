@@ -121,17 +121,17 @@ class TestAIFValidatorConfig:
             expected_sp_audiences=["test-audience"],
             expected_issuer_id="aif://test-issuer.example.com"
         )
-        assert str(config.aif_core_service_url) == "https://test.example.com"
+        assert str(config.aif_core_service_url) == "https://test.example.com/"  # Add trailing slash
         assert config.expected_sp_audiences == ["test-audience"]
         assert config.expected_issuer_id == "aif://test-issuer.example.com"
-    
+
     def test_config_from_env(self, monkeypatch):
         monkeypatch.setenv("AIF_CORE_SERVICE_URL", "https://env.example.com")
         monkeypatch.setenv("AIF_SP_EXPECTED_AUDIENCES", "env-audience1,env-audience2")
         monkeypatch.setenv("AIF_EXPECTED_ISSUER_ID", "aif://env-issuer.example.com")
         
         config = AIFValidatorConfig.from_env()
-        assert str(config.aif_core_service_url) == "https://env.example.com"
+        assert str(config.aif_core_service_url) == "https://env.example.com/"  # Add trailing slash
         assert config.expected_sp_audiences == ["env-audience1", "env-audience2"]
         assert config.expected_issuer_id == "aif://env-issuer.example.com"
     
