@@ -1,6 +1,7 @@
 # Heimdall SP Validator SDK
 
 Python SDK for Service Providers to validate Agent Identity Framework (AIF) tokens issued by Heimdall-compliant Issuing Entities.
+Verify agent tokens with cryptographic signature validation, audience checking, and revocation status - ensuring only authorized AI agents can access your services.
 
 ## Installation
 
@@ -62,8 +63,9 @@ validator = AIFTokenValidator(config)
 | `revocation_check_timeout_seconds` | 5 | Revocation check timeout |
 | `clock_skew_seconds` | 60 | Allowed time skew for validation |
 
-## Documentation
 
-**[More Details & Examples →](DOCUMENTATION.md)**
+
+**[More Details & Examples](DOCUMENTATION.md)**
+
 
 MIT License - see [LICENSE](LICENSE) file for details.
