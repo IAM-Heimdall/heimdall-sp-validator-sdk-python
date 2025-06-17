@@ -26,13 +26,10 @@ validator = AIFTokenValidator(config)
 # Validate token
 try:
     result = await validator.verify_atk(token_string)
-    # Token is valid - proceed with request
-    user_id = result.user_id_from_aid
-    permissions = result.permissions
-    # Your business logic here...
+    print(f"Valid token for user: {result.user_id_from_aid}")
+    print(f"Permissions: {result.permissions}")
 except Exception as e:
-    # Token validation failed - reject request
-    raise Unauthorized("Invalid agent token")
+    print(f"Invalid token: {e}")
 ```
 
 ## Configuration
